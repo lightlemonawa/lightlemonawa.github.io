@@ -54,6 +54,33 @@
       </div>
     </section>
     <!--  /- END INTRO SECTION-->
+    <h1>实时时钟</h1>
+  <div id="clock">
+    <span id="time"></span>
+    <span id="date"></span>
+  </div>
+  <script>
+    // 获取时钟元素
+    var clock = document.getElementById('clock');
+
+    // 获取时间和日期元素
+    var time = document.getElementById('time');
+    var date = document.getElementById('date');
+
+    // 创建一个新的日期对象
+    var now = new Date();
+
+    // 更新时间和日期元素
+    time.innerHTML = now.toLocaleTimeString();
+    date.innerHTML = now.toLocaleDateString();
+
+    // 每隔一秒更新时间和日期
+    setInterval(function() {
+      now = new Date();
+      time.innerHTML = now.toLocaleTimeString();
+      date.innerHTML = now.toLocaleDateString();
+    }, 1000);
+  </script> 
     <!-- ABOUT SECTION -->
     <section id="about">
       <div class="container">
@@ -489,32 +516,6 @@
     <script src="js/theme.js"></script>
     <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-      <h1>实时时钟</h1>
-  <div id="clock">
-    <span id="time"></span>
-    <span id="date"></span>
-  </div>
-  <script>
-    // 获取时钟元素
-    var clock = document.getElementById('clock');
-
-    // 获取时间和日期元素
-    var time = document.getElementById('time');
-    var date = document.getElementById('date');
-
-    // 创建一个新的日期对象
-    var now = new Date();
-
-    // 更新时间和日期元素
-    time.innerHTML = now.toLocaleTimeString();
-    date.innerHTML = now.toLocaleDateString();
-
-    // 每隔一秒更新时间和日期
-    setInterval(function() {
-      now = new Date();
-      time.innerHTML = now.toLocaleTimeString();
-      date.innerHTML = now.toLocaleDateString();
-    }, 1000);
-  </script>        
+             
   </body>
 </html>
